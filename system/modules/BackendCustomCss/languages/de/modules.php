@@ -31,6 +31,6 @@
 /**
  * Define name and tooltip for preferences (inactive modules)
  */
-$GLOBALS['TL_LANG']['MOD']['BackendCustomCss'] = array('Backend eigene CSS Footer', 'Bietet die Möglichkeit, spezielle CSS dem Contao Backend hinzuzufügen.');
+$GLOBALS['TL_LANG']['MOD']['BackendCustomCss'] = array('Backend eigene CSS', 'Bietet die MÃ¶glichkeit, spezielle CSS dem Contao Backend hinzuzufÃ¼gen.');
 
 ?>
