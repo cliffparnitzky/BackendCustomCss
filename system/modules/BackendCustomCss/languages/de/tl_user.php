@@ -10,12 +10,12 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 3 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at <http://www.gnu.org/licenses/>.
@@ -28,8 +28,13 @@
  */
 
 /**
- * Define name and tooltip for preferences (inactive modules)
+ * Fields
  */
-$GLOBALS['TL_LANG']['MOD']['BackendCustomCss'] = array('Benutzerdefinierte CSS im Backend verwenden', 'Bietet die Möglichkeit, spezielle CSS dem Contao Backend hinzuzufügen.');
+$GLOBALS['TL_LANG']['tl_user']['useBackendCustomCss'] = array('Benutzerdefinierte CSS verwenden', 'Geben Sie an, ob Sie benutzerdefinierte CSS im Backend verwenden wollen.');
+
+/**
+ * Legends
+ */
+$GLOBALS['TL_LANG']['tl_user']['backend-extended_legend'] = 'Backend-Einstellungen (erweitert)';
 
 ?>

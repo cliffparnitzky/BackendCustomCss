@@ -2,7 +2,7 @@
 
 /**
  * Contao Open Source CMS
- * Copyright (C) 2005-2012 Leo Feyer
+ * Copyright (C) 2005-2013 Leo Feyer
  *
  * Formerly known as TYPOlight Open Source CMS.
  *
@@ -21,16 +21,15 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Cliff Parnitzky 2012
+ * @copyright  Cliff Parnitzky 2012-2013
  * @author     Cliff Parnitzky
  * @package    BackendCustomCss
  * @license    LGPL
- * @filesource
  */
 
 /**
  * Define name and tooltip for preferences (inactive modules)
  */
-$GLOBALS['TL_LANG']['MOD']['BackendCustomCss'] = array('Backend custom css', 'Provides the possibility to add special css to the contao backend.');
+$GLOBALS['TL_LANG']['MOD']['BackendCustomCss'] = array('Use custom CSS in backend', 'Provides the possibility to add special CSS to the contao backend.');
 
 ?>

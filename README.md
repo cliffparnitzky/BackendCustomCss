@@ -3,8 +3,6 @@ Contao Extension: BackendCustomCss
 
 Provides the possibility to add special css to the contao backend.
 
-**!!! PROOF OF CONCEPT !!!**
-
 
 Installation
 ------------
@@ -23,7 +21,7 @@ Compatibility
 -------------
 
 - min. version: Contao 2.9.5
-- max. version: Contao 2.11.x
+- max. version: Contao 3.0.x
 
 
 Dependency

@@ -10,12 +10,12 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 3 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at <http://www.gnu.org/licenses/>.
@@ -28,8 +28,37 @@
  */
 
 /**
- * Define name and tooltip for preferences (inactive modules)
+ * Class BackendCustomCss
+ *
+ * Adds misc functions to add css.
+ * @copyright  Cliff Parnitzky 2012-2013
+ * @author     Cliff Parnitzky
  */
-$GLOBALS['TL_LANG']['MOD']['BackendCustomCss'] = array('Benutzerdefinierte CSS im Backend verwenden', 'Bietet die Möglichkeit, spezielle CSS dem Contao Backend hinzuzufügen.');
+class BackendCustomCss extends Backend
+{
+	/**
+	 * Initialize the object, import the user class file
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->import('BackendUser', 'User');
+	}
+
+	/**
+	 * Adds css
+	 */
+	public function addStaticConfiguration($strName, $strLanguage)
+	{
+		if ($this->User->useBackendCustomCss)
+		{
+			$GLOBALS['TL_CSS'][] = 'system/modules/BackendCustomCss/html/backend_improvements.css';
+			$GLOBALS['TL_CSS'][] = 'system/modules/BackendCustomCss/html/backend_full.css';
+
+			// make sure the hook is only executed once
+			unset($GLOBALS['TL_HOOKS']['loadLanguageFile']['BackendCustomCssHook']);
+		}
+	}
+}
 
 ?>
