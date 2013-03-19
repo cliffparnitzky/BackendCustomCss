@@ -12,5 +12,8 @@
 -- 
 
 CREATE TABLE `tl_user` (
-  `useBackendCustomCss` char(1) NOT NULL default ''
+  `backendCustomCssActive` char(1) NOT NULL default '',
+  `backendCustomCssTemplateStyles` blob NULL,
+  `backendCustomCssSystemStyles` blob NULL,
+  `backendCustomCssUserStyles` blob NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

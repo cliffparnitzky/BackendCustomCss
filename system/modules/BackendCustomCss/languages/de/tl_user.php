@@ -30,11 +30,41 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_user']['useBackendCustomCss'] = array('Benutzerdefinierte CSS verwenden', 'Geben Sie an, ob Sie benutzerdefinierte CSS im Backend verwenden wollen.');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssActive']           = array('Benutzerdefinierte CSS verwenden', 'Geben Sie an, ob Sie benutzerdefinierte CSS im Backend verwenden wollen.');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyles']   = array('Benutzerdefinierte CSS :: Vorlagen', 'Wählen Sie aus, welche der Vorlagen verwendet werden sollen.');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyles']     = array('Benutzerdefinierte CSS :: System Styles', 'Wählen Sie aus, welche der System CSS Dateien verwendet werden sollen.');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStyles']       = array('Benutzerdefinierte CSS :: Benutzer Styles', 'Legen Sie eigene CSS Datei für das Backend fest.');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesPath']   = array('Pfad', 'Geben Sie den Pfad zu einer CSS Datei ein.');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesActive'] = array('Aktiv', 'Geben Sie an, ob diese CSS Datei aktiv ist und somit verwendet werden soll.');
+
+/**
+ * Template styles options
+ */
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_full']         = array("Volle Breite", "Stellt das Backend in voller Bildschirmbreite, also 100%, dar.");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements'] = array("Verbesserungen", "Stellt Verbesserungen der Backend CSS Definition zur Verfügung.");
 
 /**
  * Legends
  */
 $GLOBALS['TL_LANG']['tl_user']['backend-extended_legend'] = 'Backend-Einstellungen (erweitert)';
+
+/**
+ * Dynamically adding system styles for wizard.
+ */
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes']['optionLabel']['fixed'] = array("(Fix)", "<br/><br/>Diese CSS Datei ist als <b>Fix</b> markiert, d.h. sie wird immer im Backend eingebunden, auch wenn Sie keine Verwendung benutzerdefinierter CSS aktiviert haben, oder diese CSS Datei abwählen.");
+if ($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles'])
+{
+	$systemStyles = deserialize($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles']);
+	if (is_array($systemStyles))
+	{
+		foreach ($systemStyles as $k=>$v)
+		{
+			if ($v['active'])
+			{
+				$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes'][$v['alias']] = array($v['name'], $v['description'] . ($v['fix'] ? ' ' . $GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes']['optionLabel']['fixed'][1] : ''));
+			}
+		}
+	}
+}
 
 ?>

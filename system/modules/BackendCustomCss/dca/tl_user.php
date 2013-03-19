@@ -34,6 +34,7 @@ foreach ($GLOBALS['TL_DCA']['tl_user']['palettes'] as $key => $row)
 {
 	if ($key == '__selector__')
 	{
+		$GLOBALS['TL_DCA']['tl_user']['palettes'][$key][] = 'backendCustomCssActive';
 		continue;
 	}
 
@@ -45,7 +46,7 @@ foreach ($GLOBALS['TL_DCA']['tl_user']['palettes'] as $key => $row)
 	{
 		if (strpos($pallet, "backend-extended_legend") !== false)
 		{
-			$arrPalettes[$index] = $pallet . ",useBackendCustomCss";
+			$arrPalettes[$index] = $pallet . ",backendCustomCssActive";
 			$backendExtendedPalletFound = true;
 		}
 		else if (strpos($pallet, "backend_legend") !== false)
@@ -55,20 +56,65 @@ foreach ($GLOBALS['TL_DCA']['tl_user']['palettes'] as $key => $row)
 	}
 	if (!$backendExtendedPalletFound)
 	{
-		array_insert($arrPalettes, $backendPalletIndex + 1, '{backend-extended_legend},useBackendCustomCss', false);
+		array_insert($arrPalettes, $backendPalletIndex + 1, '{backend-extended_legend},backendCustomCssActive', false);
 	}
 
 	$GLOBALS['TL_DCA']['tl_user']['palettes'][$key] = implode(";", $arrPalettes);
 }
 
+$GLOBALS['TL_DCA']['tl_user']['subpalettes']['backendCustomCssActive'] = 'backendCustomCssTemplateStyles,backendCustomCssSystemStyles,backendCustomCssUserStyles';
+
 /**
  * Add field
  */
-$GLOBALS['TL_DCA']['tl_user']['fields']['useBackendCustomCss'] = array
+$GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssActive'] = array
 (
-	'label'     => &$GLOBALS['TL_LANG']['tl_user']['useBackendCustomCss'],
+	'label'     => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssActive'],
 	'inputType' => 'checkbox',
 	'eval'      => array('submitOnChange'=>true, 'tl_class'=>'w50')
+);
+$GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssTemplateStyles'] = array
+(
+	'label'     => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyles'],
+	'inputType' => 'checkboxWizard',
+	'options'   => array('backend_full', 'backend_improvements'),
+	'reference' => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes'],
+	'eval'      => array('tl_class'=>'clr w50', 'multiple'=>true, 'helpwizard'=>true)
+);
+$GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssSystemStyles'] = array
+(
+	'label'            => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyles'],
+	'inputType'        => 'checkboxWizard',
+	'options_callback' => array('BackendCustomCss', 'getSystemStylesOptions'),
+	'reference'        => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes'],
+	'eval'             => array('tl_class'=>'w50', 'multiple'=>true, 'helpwizard'=>true)
+);
+$GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssUserStyles'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStyles'],
+	'inputType'               => 'multiColumnWizard',
+	'eval'                    => array
+	(
+		'mandatory'    => false,
+		'style'        => 'min-width: 100%;',
+		'tl_class'     =>'clr',
+		'columnFields' => array
+		(
+			'cssFilePath' => array
+			(
+				'label'            => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesPath'],
+				'exclude'          => true,
+				'inputType'        => 'text',
+				'eval'             => array('style'=>'width: 95%;', 'nospace'=>true)
+			),
+			'active' => array
+			(
+				'label'            => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesActive'],
+				'exclude'          => true,
+				'inputType'        => 'checkbox'
+			)
+		)
+	)
 );
 
 ?>

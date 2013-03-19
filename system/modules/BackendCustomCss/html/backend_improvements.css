@@ -1,2 +1,2 @@
-/* Links in der BE-Navigation auf voller Breite anklickbar */ #tl_navigation .tl_level_2 a { display: block; line-height: 14px; margin-right: 5px; overflow: hidden; white-space: nowrap; } 
+#tl_navigation .tl_level_2 a { display: block; line-height: 14px; margin-right: 5px; overflow: hidden; white-space: nowrap; } 
 

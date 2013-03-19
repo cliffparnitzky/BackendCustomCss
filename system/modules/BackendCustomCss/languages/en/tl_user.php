@@ -30,11 +30,41 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_user']['useBackendCustomCss'] = array('Use custom CSS', 'Select if you want to use the custom CSS in the backend');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssActive']           = array('Use custom CSS', 'Select if you want to use the custom CSS in the backend');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyles']   = array('Custom CSS :: Templates', 'Select which templates should be used.');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyles']     = array('Custom CSS :: System Styles', 'Select which system CSS files should be used.');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStyles']       = array('Custom CSS :: User styles', 'Set your own CSS file for the backend.');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesPath']   = array('Path', 'Enter the path to a CSS file.');
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesActive'] = array('Active', 'Set if this CSS file is active and should be used.');
+
+/**
+ * Template styles options
+ */
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_full']         = array("Fill width", "Provides full width (100%) for the backend.");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements'] = array("Improvements", "Provides improvements for the backend css.");
 
 /**
  * Legends
  */
 $GLOBALS['TL_LANG']['tl_user']['backend-extended_legend'] = 'Back end settings (extended)';
+
+/**
+ * Dynamically adding system styles for wizard.
+ */
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes']['optionLabel']['fixed'] = array("(Fix)", "<br/><br/>This CSS file ist marked as <b>Fix</b>, which means it will always be integrated in the backend, even if you have not activated using custom CSS, or deselect this CSS file.");
+if ($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles'])
+{
+	$systemStyles = deserialize($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles']);
+	if (is_array($systemStyles))
+	{
+		foreach ($systemStyles as $k=>$v)
+		{
+			if ($v['active'])
+			{
+				$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes'][$v['alias']] = array($v['name'], $v['description'] . ($v['fix'] ? ' ' . $GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes']['optionLabel']['fixed'][1] : ''));
+			}
+		}
+	}
+}
 
 ?>
