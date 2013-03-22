@@ -1,0 +1,40 @@
+/* Grundfarben für Elemente dunkler - besserer Kontrast/Barrierefreiheit */
+a, body, div, label, legend, li, ol, p, td, th, ul, fieldset, form, input, optgroup, select, textarea {
+	color: #333;
+}
+
+/* Links in der BE-Navigation auf voller Breite anklickbar */
+#tl_navigation li a {
+	display: block;
+}
+
+/* Links in der BE-Navigation mit besserer Fokus/Hover-Markierung */
+#tl_navigation a:link, #tl_navigation a:visited {
+	color: #333;
+	text-decoration: none;
+}
+#tl_navigation a:hover, #tl_navigation a:focus, #tl_navigation a:active {
+	color: #000;
+	text-decoration: underline;
+}
+
+/* Aktiver Punkt in BE-Navigation besser erkennbar */
+#tl_navigation .tl_level_2 a.active {
+	font-weight: bold;
+}
+
+/* Hover/Fokus Markierung für Label, z. B. beim Auswaehlen von Labels bei den Definitionen der Benutzergruppen */
+.tl_checkbox_container label:hover, .tl_checkbox_container label:focus {
+	color: #000 !important;
+	outline: 1px solid #465E22;
+}
+
+/* Verstaerkte Hover/Fokus Markierung für Listinganzeige */
+.tl_listing tr:hover, .tl_listing tr:focus {
+	outline: 1px solid #465E22;
+}
+
+/* Verstaerkte Hover/Fokus Markierung für Icons in der Listinganzeige */
+.tl_listing .tl_right a img:hover, .tl_listing .tl_right a img:focus {
+	outline: 1px solid #465E22;
+}

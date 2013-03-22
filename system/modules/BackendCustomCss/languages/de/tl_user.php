@@ -40,8 +40,9 @@ $GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesActive'] = array('Akti
 /**
  * Template styles options
  */
-$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_full']         = array("Volle Breite", "Stellt das Backend in voller Bildschirmbreite, also 100%, dar.");
-$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements'] = array("Verbesserungen", "Stellt Verbesserungen der Backend CSS Definition zur Verfügung.");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_full']            = array("Volle Breite", "Stellt das Backend in voller Bildschirmbreite, also 100%, dar.<br><i>von Cliff Parnitzky</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements_cp'] = array("Verbesserungen (CP)", "Stellt einige Verbesserungen der Backend CSS Definition zur Verfügung.<br><i>von Cliff Parnitzky</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements_ng'] = array("Verbesserungen (NG)", "Stellt einige Verbesserungen der Backend CSS Definition zur Verfügung.<br><i>von Nina Gerling</i>");
 
 /**
  * Legends

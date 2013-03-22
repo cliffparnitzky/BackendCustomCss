@@ -40,8 +40,9 @@ $GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesActive'] = array('Acti
 /**
  * Template styles options
  */
-$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_full']         = array("Fill width", "Provides full width (100%) for the backend.");
-$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements'] = array("Improvements", "Provides improvements for the backend css.");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_full']            = array("Fill width", "Provides full width (100%) for the backend.<br><i>by Cliff Parnitzky</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements_cp'] = array("Improvements (CP)", "Provides some improvements for the backend css.<br><i>by Cliff Parnitzky</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements_ng'] = array("Improvements (NG)", "Provides some improvements for the backend css.<br><i>by Nina Gerling</i>");
 
 /**
  * Legends
