@@ -41,7 +41,6 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['backendCustomCssSystemStyles'] = ar
 	'inputType'               => 'multiColumnWizard',
 	'eval'                    => array
 	(
-		'mandatory'    => false,
 		'style'        => 'min-width: 100%;',
 		'tl_class'     =>'clr',
 		'columnFields' => array
@@ -51,28 +50,28 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['backendCustomCssSystemStyles'] = ar
 				'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesAlias'],
 				'exclude'          => true,
 				'inputType'        => 'text',
-				'eval'             => array('style'=>'width: 60px;', 'mandatory'=>true, 'spaceToUnderscore'=>true)
+				'eval'             => array('style'=>'width: 95%;', 'spaceToUnderscore'=>true, 'rgxp'=>'technicalValue')
 			),
 			'name' => array
 			(
 				'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesName'],
 				'exclude'          => true,
 				'inputType'        => 'text',
-				'eval'             => array('style'=>'width: 95%;', 'mandatory'=>true)
+				'eval'             => array('style'=>'width: 95%;')
 			),
 			'description' => array
 			(
 				'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesDescription'],
 				'exclude'          => true,
 				'inputType'        => 'text',
-				'eval'             => array('style'=>'width: 95%;', 'mandatory'=>true)
+				'eval'             => array('style'=>'width: 95%;')
 			),
 			'cssFilePath' => array
 			(
 				'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesPath'],
 				'exclude'          => true,
 				'inputType'        => 'text',
-				'eval'             => array('style'=>'width: 95%;', 'mandatory'=>true, 'nospace'=>true)
+				'eval'             => array('style'=>'width: 95%;', 'nospace'=>true)
 			),
 			'fix' => array
 			(

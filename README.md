@@ -36,7 +36,7 @@ Compatibility
 Dependency
 ----------
 
-- There are no dependencies to other extensions, that have to be installed.
+- This extension is dependent on the following extensions: [[MultiColumnWizard]](https://contao.org/en/extension-list/view/MultiColumnWizard.html), [[TechnicalValueRegex]](https://github.com/cliffparnitzky/TechnicalValueRegex)
 
 
 Screenshots
