@@ -50,7 +50,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['backendCustomCssSystemStyles'] = ar
 				'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesAlias'],
 				'exclude'          => true,
 				'inputType'        => 'text',
-				'eval'             => array('style'=>'width: 95%;', 'spaceToUnderscore'=>true, 'rgxp'=>'technicalValue')
+				'eval'             => array('style'=>'width: 95%;', 'spaceToUnderscore'=>true, 'rgxp'=>'tecValueLC')
 			),
 			'name' => array
 			(
