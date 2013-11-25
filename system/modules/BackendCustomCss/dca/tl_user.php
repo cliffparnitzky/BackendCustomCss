@@ -71,13 +71,13 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssActive'] = array
 (
 	'label'     => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssActive'],
 	'inputType' => 'checkbox',
-	'eval'      => array('submitOnChange'=>true, 'tl_class'=>'w50')
+	'eval'      => array('tl_class'=>'w50')
 );
 $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssTemplateStyles'] = array
 (
 	'label'     => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyles'],
 	'inputType' => 'checkboxWizard',
-	'options'   => array('backend_full', 'backend_improvements_cp', 'backend_improvements_ng'),
+	'options'   => array('backend_full', 'backend_improvements_cp', 'backend_improvements_ng', 'backend_hide_paste_hint'),
 	'reference' => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes'],
 	'eval'      => array('tl_class'=>'clr w50', 'multiple'=>true, 'helpwizard'=>true)
 );

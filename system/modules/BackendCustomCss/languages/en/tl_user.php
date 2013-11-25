@@ -43,6 +43,7 @@ $GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesActive'] = array('Acti
 $GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_full']            = array("Fill width", "Provides full width (100%) for the backend.<br><i>by Cliff Parnitzky</i>");
 $GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements_cp'] = array("Improvements (CP)", "Provides some improvements for the backend css.<br><i>by Cliff Parnitzky</i>");
 $GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements_ng'] = array("Improvements (NG)", "Provides some improvements for the backend css.<br><i>by Nina Gerling</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_hide_paste_hint'] = array("Hide paste hint", "Hides the paste hint (Note with arrow, where to insert a new element)<br><i>von Cliff Parnitzky</i>");
 
 /**
  * Legends

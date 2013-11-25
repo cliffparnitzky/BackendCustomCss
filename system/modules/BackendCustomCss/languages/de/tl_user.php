@@ -43,6 +43,7 @@ $GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesActive'] = array('Akti
 $GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_full']            = array("Volle Breite", "Stellt das Backend in voller Bildschirmbreite, also 100%, dar.<br><i>von Cliff Parnitzky</i>");
 $GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements_cp'] = array("Verbesserungen (CP)", "Stellt einige Verbesserungen der Backend CSS Definition zur Verfügung.<br><i>von Cliff Parnitzky</i>");
 $GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements_ng'] = array("Verbesserungen (NG)", "Stellt einige Verbesserungen der Backend CSS Definition zur Verfügung.<br><i>von Nina Gerling</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_hide_paste_hint'] = array("Paste Hint verstecken", "Versteckt den Paste Hint (Hinweis mit Pfeil, wo ein neues Element einfügt werden kann)<br><i>von Cliff Parnitzky</i>");
 
 /**
  * Legends
