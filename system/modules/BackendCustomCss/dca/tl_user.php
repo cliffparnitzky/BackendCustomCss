@@ -97,7 +97,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssUserStyles'] = array
 	(
 		'mandatory'    => false,
 		'style'        => 'min-width: 100%;',
-		'tl_class'     =>'clr',
+		'tl_class'     =>'clr long',
 		'columnFields' => array
 		(
 			'cssFilePath' => array
