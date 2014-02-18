@@ -1,6 +1,7 @@
 {
 	"name":"cliffparnitzky/backend-custom-css",
-	"description":"Provides the possibility to add special css to the contao backend.
+	"description":"
+Provides the possibility to add special css to the contao backend.
 
 There are 3 types of custom css:
 - templates ... delivered by this extension (send me yours, if you want to put it in this collection)
