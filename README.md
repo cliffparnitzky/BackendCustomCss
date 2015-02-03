@@ -1,3 +1,7 @@
+[![Latest Version on Packagist](http://img.shields.io/packagist/v/cliffparnitzky/backend-custom-css.svg?style=flat)](https://packagist.org/packages/cliffparnitzky/backend-custom-css)
+[![Installations via composer per month](http://img.shields.io/packagist/dm/cliffparnitzky/backend-custom-css.svg?style=flat)](https://packagist.org/packages/cliffparnitzky/backend-custom-css)
+[![Installations via composer total](http://img.shields.io/packagist/dt/cliffparnitzky/backend-custom-css.svg?style=flat)](https://packagist.org/packages/cliffparnitzky/backend-custom-css)
+
 Contao Extension: BackendCustomCss
 ==================================
 
@@ -16,8 +20,9 @@ Each user style can also be set to inactive (must not be deleted in order to avo
 Installation
 ------------
 
-The extension is not published in contao extension repository.
-Install it manually or via [composer](https://packagist.org/packages/cliffparnitzky/backend-custom-css).
+Install the extension via composer: [cliffparnitzky/backend-custom-css](https://packagist.org/packages/cliffparnitzky/backend-custom-css).
+
+If you prefer to install it manually, download the latest release here: https://github.com/cliffparnitzky/BackendCustomCss/releases
 
 
 Tracker
@@ -29,14 +34,14 @@ https://github.com/cliffparnitzky/BackendCustomCss/issues
 Compatibility
 -------------
 
-- min. version: Contao 2.9.5
-- max. version: Contao 3.2.x
+- min. version: Contao 3.2.0
+- max. version: Contao 3.3.x
 
 
 Dependency
 ----------
 
-- This extension is dependent on the following extensions: [[MultiColumnWizard]](https://contao.org/en/extension-list/view/MultiColumnWizard.html), [[TechnicalValueRegex]](https://github.com/cliffparnitzky/TechnicalValueRegex)
+- This extension is dependent on the following extensions: [[menatwork/contao-multicolumnwizard]](https://packagist.org/packages/menatwork/contao-multicolumnwizard), [[cliffparnitzky/technical-value-regex]](https://packagist.org/packages/cliffparnitzky/technical-value-regex)
 
 
 Screenshots
