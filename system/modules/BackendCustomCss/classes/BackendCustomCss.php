@@ -52,7 +52,6 @@ class BackendCustomCss extends \Backend
    */
   public function addStaticConfiguration($strName, $strLanguage)
   {
-    $systemStyles = $this->getSystemStylesPaths();
     if ($this->User->backendCustomCssActive)
     {
       if ($this->User->backendCustomCssTemplateStyles)
@@ -65,6 +64,7 @@ class BackendCustomCss extends \Backend
       
       if ($this->User->backendCustomCssSystemStyles)
       {
+        $systemStyles = $this->getSystemStylesPaths();
         foreach ($this->User->backendCustomCssSystemStyles as $style)
         {
           $path = $systemStyles[$style];
@@ -117,7 +117,7 @@ class BackendCustomCss extends \Backend
       {
         foreach ($systemStyles as $k=>$v)
         {
-          if ($v['active'] && !$v['fix'])
+          if ($v['active'] && !$v['fix'] && static::matchesDomain($v['domain']))
           {
             $styles[$v['alias']] = $v['name'];
           }
@@ -142,20 +142,46 @@ class BackendCustomCss extends \Backend
       {
         foreach ($systemStyles as $k=>$v)
         {
-          $useStyle = $v['active'];
-          if ($blnOnlyFixed && $useStyle)
-          {
-            $useStyle = $v['fix'];
-          }
+          $useStyle = $v['active'] && static::matchesDomain($v['domain']);
+          
           if ($useStyle)
           {
-            $styles[$v['alias']] = $v['cssFilePath'];
+            if ($blnOnlyFixed && $v['fix'])
+            {
+              $useStyle = true;
+            }
+            else if (!$blnOnlyFixed && !$v['fix'])
+            {
+              $useStyle = true;
+            }
+            else
+            {
+              $useStyle = false;
+            }
+            
+            if ($useStyle)
+            {
+              $styles[$v['alias']] = $v['cssFilePath'];
+            }
           }
         }
       }
     }
     
     return $styles; 
+  }
+  
+  /**
+   * Check if the given domain is contained in the environment HTTP host
+   */
+  public static function matchesDomain($strDomain)
+  {
+    if (empty($strDomain))
+    {
+      return true;
+    }
+    
+    return strpos(\Environment::get('httpHost'), $strDomain) !== FALSE;
   }
 }
 

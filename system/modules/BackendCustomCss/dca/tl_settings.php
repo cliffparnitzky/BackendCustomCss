@@ -59,19 +59,19 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['backendCustomCssSystemStyles'] = ar
         'inputType'        => 'text',
         'eval'             => array('style'=>'width: 95%;')
       ),
-      'description' => array
-      (
-        'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesDescription'],
-        'exclude'          => true,
-        'inputType'        => 'text',
-        'eval'             => array('style'=>'width: 95%;')
-      ),
       'cssFilePath' => array
       (
         'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesPath'],
         'exclude'          => true,
         'inputType'        => 'text',
         'eval'             => array('style'=>'width: 95%;', 'nospace'=>true)
+      ),
+      'domain' => array
+      (
+        'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesDomain'],
+        'exclude'          => true,
+        'inputType'        => 'text',
+        'eval'             => array('style'=>'width: 95%;')
       ),
       'fix' => array
       (
