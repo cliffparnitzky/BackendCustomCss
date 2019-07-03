@@ -87,7 +87,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssSystemStyles'] = array
 (
   'label'            => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyles'],
   'inputType'        => 'checkboxWizard',
-  'options_callback' => array('BackendCustomCss', 'getSystemStylesOptions'),
+  'options_callback' => array('BackendCustomCss\BackendCustomCss', 'getSystemStylesOptions'),
   'reference'        => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes'],
   'eval'             => array('tl_class'=>'w50', 'multiple'=>true, 'helpwizard'=>true),
   'sql'       => "blob NULL"
