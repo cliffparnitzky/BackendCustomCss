@@ -53,7 +53,6 @@ $GLOBALS['TL_LANG']['tl_user']['backend-extended_legend'] = 'Backend-Einstellung
 /**
  * Dynamically adding system styles for wizard.
  */
-$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes']['optionLabel']['fixed'] = array("(Fix)", "<br/><br/>Diese CSS Datei ist als <b>Fix</b> markiert, d.h. sie wird immer im Backend eingebunden, auch wenn Sie keine Verwendung benutzerdefinierter CSS aktiviert haben, oder diese CSS Datei abwählen.");
 if ($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles'])
 {
   $systemStyles = deserialize($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles']);
@@ -61,9 +60,9 @@ if ($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles'])
   {
     foreach ($systemStyles as $k=>$v)
     {
-      if ($v['active'])
+      if ($v['active'] && !$v['fix'])
       {
-        $GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes'][$v['alias']] = array($v['name'], $v['description'] . ($v['fix'] ? ' ' . $GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes']['optionLabel']['fixed'][1] : ''));
+        $GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes'][$v['alias']] = array($v['alias'], $v['name']);
       }
     }
   }
