@@ -2,13 +2,20 @@
 
 /**
  * Contao Open Source CMS
- * 
- * Copyright (C) 2005-2013 Leo Feyer
- * 
- * @package BackendCustomCss
- * @link    https://contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ *
+ * Copyright (c) 2005-2019 Leo Feyer
+ *
+ * @license LGPL-3.0+
  */
+
+
+/**
+ * Register the namespaces
+ */
+ClassLoader::addNamespaces(array
+(
+	'CliffParnitzky',
+));
 
 
 /**
@@ -16,5 +23,6 @@
  */
 ClassLoader::addClasses(array
 (
-	'BackendCustomCss' => 'system/modules/BackendCustomCss/BackendCustomCss.php',
+	// Classes
+	'CliffParnitzky\BackendCustomCss\BackendCustomCss' => 'system/modules/BackendCustomCss/classes/BackendCustomCss.php',
 ));

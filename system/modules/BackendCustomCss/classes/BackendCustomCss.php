@@ -27,6 +27,8 @@
  * @license    LGPL
  */
 
+namespace CliffParnitzky\BackendCustomCss;
+
 /**
  * Class BackendCustomCss
  *
@@ -34,7 +36,7 @@
  * @copyright  Cliff Parnitzky 2012-2019
  * @author     Cliff Parnitzky
  */
-class BackendCustomCss extends Backend
+class BackendCustomCss extends \Backend
 {
 	/**
 	 * Initialize the object, import the user class file
