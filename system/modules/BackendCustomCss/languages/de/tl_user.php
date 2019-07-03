@@ -50,22 +50,4 @@ $GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_hi
  */
 $GLOBALS['TL_LANG']['tl_user']['backend-extended_legend'] = 'Backend-Einstellungen (erweitert)';
 
-/**
- * Dynamically adding system styles for wizard.
- */
-if ($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles'])
-{
-  $systemStyles = deserialize($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles']);
-  if (is_array($systemStyles))
-  {
-    foreach ($systemStyles as $k=>$v)
-    {
-      if ($v['active'] && !$v['fix'])
-      {
-        $GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes'][$v['alias']] = array($v['alias'], $v['name']);
-      }
-    }
-  }
-}
-
 ?>
