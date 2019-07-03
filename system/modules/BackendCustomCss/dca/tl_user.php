@@ -71,7 +71,8 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssActive'] = array
 (
 	'label'     => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssActive'],
 	'inputType' => 'checkbox',
-	'eval'      => array('tl_class'=>'w50')
+	'eval'      => array('tl_class'=>'w50'),
+  'sql'       => "char(1) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssTemplateStyles'] = array
 (
@@ -79,7 +80,8 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssTemplateStyles'] = arra
 	'inputType' => 'checkboxWizard',
 	'options'   => array('backend_full', 'backend_improvements_cp', 'backend_improvements_ng', 'backend_hide_paste_hint'),
 	'reference' => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes'],
-	'eval'      => array('tl_class'=>'clr w50', 'multiple'=>true, 'helpwizard'=>true)
+	'eval'      => array('tl_class'=>'clr w50', 'multiple'=>true, 'helpwizard'=>true),
+  'sql'       => "blob NULL"
 );
 $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssSystemStyles'] = array
 (
@@ -87,7 +89,8 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssSystemStyles'] = array
 	'inputType'        => 'checkboxWizard',
 	'options_callback' => array('BackendCustomCss', 'getSystemStylesOptions'),
 	'reference'        => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes'],
-	'eval'             => array('tl_class'=>'w50', 'multiple'=>true, 'helpwizard'=>true)
+	'eval'             => array('tl_class'=>'w50', 'multiple'=>true, 'helpwizard'=>true),
+  'sql'       => "blob NULL"
 );
 $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssUserStyles'] = array
 (
@@ -114,7 +117,8 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssUserStyles'] = array
 				'inputType'        => 'checkbox'
 			)
 		)
-	)
+	),
+  'sql'       => "blob NULL"
 );
 
 ?>
