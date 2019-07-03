@@ -107,7 +107,7 @@ class BackendCustomCss extends \Backend
    * @param DataContainer
    * @return array
    */
-  public function getSystemStylesOptions(DataContainer $dc) {
+  public function getSystemStylesOptions(\DataContainer $dc) {
     $styles = array();
     
     if ($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles'])
@@ -117,9 +117,9 @@ class BackendCustomCss extends \Backend
       {
         foreach ($systemStyles as $k=>$v)
         {
-          if ($v['active'])
+          if ($v['active'] && !$v['fix'])
           {
-            $styles[$v['alias']] = $v['name'] . ($v['fix'] ? ' ' . $GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes']['optionLabel']['fixed'][0] : '');
+            $styles[$v['alias']] = $v['name'];
           }
         }
       }
