@@ -57,7 +57,7 @@ class BackendCustomCss extends Backend
 			{
 				foreach ($this->User->backendCustomCssTemplateStyles as $style)
 				{
-					$GLOBALS['TL_CSS'][] = 'system/modules/BackendCustomCss/html/' . $style . '.css';
+					$GLOBALS['TL_CSS'][] = 'system/modules/BackendCustomCss/assets/' . $style . '.css';
 				}
 			}
 			
