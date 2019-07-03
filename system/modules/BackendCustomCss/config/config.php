@@ -29,7 +29,7 @@
 
 if (TL_MODE == 'BE')
 {
-	$GLOBALS['TL_HOOKS']['loadLanguageFile']['BackendCustomCssHook'] = array('BackendCustomCss\BackendCustomCss', 'addStaticConfiguration');
+  $GLOBALS['TL_HOOKS']['loadLanguageFile']['BackendCustomCssHook'] = array('BackendCustomCss\BackendCustomCss', 'addStaticConfiguration');
 }
 
 ?>

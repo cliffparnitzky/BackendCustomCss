@@ -14,7 +14,7 @@
  */
 ClassLoader::addNamespaces(array
 (
-	'CliffParnitzky',
+  'CliffParnitzky',
 ));
 
 
@@ -23,6 +23,6 @@ ClassLoader::addNamespaces(array
  */
 ClassLoader::addClasses(array
 (
-	// Classes
-	'CliffParnitzky\BackendCustomCss\BackendCustomCss' => 'system/modules/BackendCustomCss/classes/BackendCustomCss.php',
+  // Classes
+  'CliffParnitzky\BackendCustomCss\BackendCustomCss' => 'system/modules/BackendCustomCss/classes/BackendCustomCss.php',
 ));

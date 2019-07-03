@@ -32,34 +32,34 @@
  */
 foreach ($GLOBALS['TL_DCA']['tl_user']['palettes'] as $key => $row)
 {
-	if ($key == '__selector__')
-	{
-		$GLOBALS['TL_DCA']['tl_user']['palettes'][$key][] = 'backendCustomCssActive';
-		continue;
-	}
+  if ($key == '__selector__')
+  {
+    $GLOBALS['TL_DCA']['tl_user']['palettes'][$key][] = 'backendCustomCssActive';
+    continue;
+  }
 
-	$arrPalettes = explode(";", $row);
+  $arrPalettes = explode(";", $row);
 
-	$backendPalletIndex = 0;
-	$backendExtendedPalletFound = false;
-	foreach ($arrPalettes as $index => $pallet)
-	{
-		if (strpos($pallet, "backend-extended_legend") !== false)
-		{
-			$arrPalettes[$index] = $pallet . ",backendCustomCssActive";
-			$backendExtendedPalletFound = true;
-		}
-		else if (strpos($pallet, "backend_legend") !== false)
-		{
-			$backendPalletIndex = $index;
-		}
-	}
-	if (!$backendExtendedPalletFound)
-	{
-		array_insert($arrPalettes, $backendPalletIndex + 1, '{backend-extended_legend},backendCustomCssActive', false);
-	}
+  $backendPalletIndex = 0;
+  $backendExtendedPalletFound = false;
+  foreach ($arrPalettes as $index => $pallet)
+  {
+    if (strpos($pallet, "backend-extended_legend") !== false)
+    {
+      $arrPalettes[$index] = $pallet . ",backendCustomCssActive";
+      $backendExtendedPalletFound = true;
+    }
+    else if (strpos($pallet, "backend_legend") !== false)
+    {
+      $backendPalletIndex = $index;
+    }
+  }
+  if (!$backendExtendedPalletFound)
+  {
+    array_insert($arrPalettes, $backendPalletIndex + 1, '{backend-extended_legend},backendCustomCssActive', false);
+  }
 
-	$GLOBALS['TL_DCA']['tl_user']['palettes'][$key] = implode(";", $arrPalettes);
+  $GLOBALS['TL_DCA']['tl_user']['palettes'][$key] = implode(";", $arrPalettes);
 }
 
 $GLOBALS['TL_DCA']['tl_user']['subpalettes']['backendCustomCssActive'] = 'backendCustomCssTemplateStyles,backendCustomCssSystemStyles,backendCustomCssUserStyles';
@@ -69,55 +69,55 @@ $GLOBALS['TL_DCA']['tl_user']['subpalettes']['backendCustomCssActive'] = 'backen
  */
 $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssActive'] = array
 (
-	'label'     => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssActive'],
-	'inputType' => 'checkbox',
-	'eval'      => array('tl_class'=>'w50'),
+  'label'     => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssActive'],
+  'inputType' => 'checkbox',
+  'eval'      => array('tl_class'=>'w50'),
   'sql'       => "char(1) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssTemplateStyles'] = array
 (
-	'label'     => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyles'],
-	'inputType' => 'checkboxWizard',
-	'options'   => array('backend_full', 'backend_improvements_cp', 'backend_improvements_ng', 'backend_hide_paste_hint'),
-	'reference' => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes'],
-	'eval'      => array('tl_class'=>'clr w50', 'multiple'=>true, 'helpwizard'=>true),
+  'label'     => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyles'],
+  'inputType' => 'checkboxWizard',
+  'options'   => array('backend_full', 'backend_improvements_cp', 'backend_improvements_ng', 'backend_hide_paste_hint'),
+  'reference' => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes'],
+  'eval'      => array('tl_class'=>'clr w50', 'multiple'=>true, 'helpwizard'=>true),
   'sql'       => "blob NULL"
 );
 $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssSystemStyles'] = array
 (
-	'label'            => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyles'],
-	'inputType'        => 'checkboxWizard',
-	'options_callback' => array('BackendCustomCss', 'getSystemStylesOptions'),
-	'reference'        => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes'],
-	'eval'             => array('tl_class'=>'w50', 'multiple'=>true, 'helpwizard'=>true),
+  'label'            => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyles'],
+  'inputType'        => 'checkboxWizard',
+  'options_callback' => array('BackendCustomCss', 'getSystemStylesOptions'),
+  'reference'        => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssSystemStyleTypes'],
+  'eval'             => array('tl_class'=>'w50', 'multiple'=>true, 'helpwizard'=>true),
   'sql'       => "blob NULL"
 );
 $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssUserStyles'] = array
 (
-	'label'                   => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStyles'],
-	'inputType'               => 'multiColumnWizard',
-	'eval'                    => array
-	(
-		'mandatory'    => false,
-		'style'        => 'min-width: 100%;',
-		'tl_class'     =>'clr long',
-		'columnFields' => array
-		(
-			'cssFilePath' => array
-			(
-				'label'            => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesPath'],
-				'exclude'          => true,
-				'inputType'        => 'text',
-				'eval'             => array('style'=>'width: 95%;', 'nospace'=>true)
-			),
-			'active' => array
-			(
-				'label'            => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesActive'],
-				'exclude'          => true,
-				'inputType'        => 'checkbox'
-			)
-		)
-	),
+  'label'                   => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStyles'],
+  'inputType'               => 'multiColumnWizard',
+  'eval'                    => array
+  (
+    'mandatory'    => false,
+    'style'        => 'min-width: 100%;',
+    'tl_class'     =>'clr long',
+    'columnFields' => array
+    (
+      'cssFilePath' => array
+      (
+        'label'            => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesPath'],
+        'exclude'          => true,
+        'inputType'        => 'text',
+        'eval'             => array('style'=>'width: 95%;', 'nospace'=>true)
+      ),
+      'active' => array
+      (
+        'label'            => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesActive'],
+        'exclude'          => true,
+        'inputType'        => 'checkbox'
+      )
+    )
+  ),
   'sql'       => "blob NULL"
 );
 

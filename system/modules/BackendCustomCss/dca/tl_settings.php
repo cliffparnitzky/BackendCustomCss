@@ -37,56 +37,56 @@ $GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .= ';{backendCustomCss_
  */
 $GLOBALS['TL_DCA']['tl_settings']['fields']['backendCustomCssSystemStyles'] = array
 (
-	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStyles'],
-	'inputType'               => 'multiColumnWizard',
-	'eval'                    => array
-	(
-		'style'        => 'min-width: 100%;',
-		'tl_class'     =>'clr',
-		'columnFields' => array
-		(
-			'alias' => array
-			(
-				'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesAlias'],
-				'exclude'          => true,
-				'inputType'        => 'text',
-				'eval'             => array('style'=>'width: 95%;', 'spaceToUnderscore'=>true, 'rgxp'=>'tecValueLC')
-			),
-			'name' => array
-			(
-				'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesName'],
-				'exclude'          => true,
-				'inputType'        => 'text',
-				'eval'             => array('style'=>'width: 95%;')
-			),
-			'description' => array
-			(
-				'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesDescription'],
-				'exclude'          => true,
-				'inputType'        => 'text',
-				'eval'             => array('style'=>'width: 95%;')
-			),
-			'cssFilePath' => array
-			(
-				'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesPath'],
-				'exclude'          => true,
-				'inputType'        => 'text',
-				'eval'             => array('style'=>'width: 95%;', 'nospace'=>true)
-			),
-			'fix' => array
-			(
-				'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesFix'],
-				'exclude'          => true,
-				'inputType'        => 'checkbox'
-			),
-			'active' => array
-			(
-				'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesActive'],
-				'exclude'          => true,
-				'inputType'        => 'checkbox'
-			)
-		)
-	)
+  'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStyles'],
+  'inputType'               => 'multiColumnWizard',
+  'eval'                    => array
+  (
+    'style'        => 'min-width: 100%;',
+    'tl_class'     =>'clr',
+    'columnFields' => array
+    (
+      'alias' => array
+      (
+        'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesAlias'],
+        'exclude'          => true,
+        'inputType'        => 'text',
+        'eval'             => array('style'=>'width: 95%;', 'spaceToUnderscore'=>true, 'rgxp'=>'tecValueLC')
+      ),
+      'name' => array
+      (
+        'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesName'],
+        'exclude'          => true,
+        'inputType'        => 'text',
+        'eval'             => array('style'=>'width: 95%;')
+      ),
+      'description' => array
+      (
+        'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesDescription'],
+        'exclude'          => true,
+        'inputType'        => 'text',
+        'eval'             => array('style'=>'width: 95%;')
+      ),
+      'cssFilePath' => array
+      (
+        'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesPath'],
+        'exclude'          => true,
+        'inputType'        => 'text',
+        'eval'             => array('style'=>'width: 95%;', 'nospace'=>true)
+      ),
+      'fix' => array
+      (
+        'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesFix'],
+        'exclude'          => true,
+        'inputType'        => 'checkbox'
+      ),
+      'active' => array
+      (
+        'label'            => &$GLOBALS['TL_LANG']['tl_settings']['backendCustomCssSystemStylesActive'],
+        'exclude'          => true,
+        'inputType'        => 'checkbox'
+      )
+    )
+  )
 ); 
 
 ?>
