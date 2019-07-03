@@ -9,10 +9,10 @@ Provides the possibility to add special css to the contao backend.
 
 There are 3 types of custom css:
 - templates ... delivered by this extension (send me yours, if you want to put it in this collection)
-- system styles ... added by system admin to settings (could be marked `fix` ... will always be used, even if usage custom css is not activated by user)
+- system styles ... added by system admin to settings (could be marked `fix` - will always be used and are not selectable by user, could be restricted by domain)
 - user styles ... each user could set its own styles in user settings
 
-The system styles (defined by admin) will automatically be listed in user settings (if active) and described in the wizard. Each style could be set inactive (will not be loaded).
+The system styles (defined by admin) will automatically be listed in user settings (if active, not fixed and match the domain). Each style could be set inactive (will not be loaded).
 
 Each user style can also be set to inactive (must not be deleted in order to avoid loading).
 
@@ -41,7 +41,10 @@ Compatibility
 Dependency
 ----------
 
-- This extension is dependent on the following extensions: [[menatwork/contao-multicolumnwizard]](https://packagist.org/packages/menatwork/contao-multicolumnwizard), [[cliffparnitzky/technical-value-regex]](https://packagist.org/packages/cliffparnitzky/technical-value-regex)
+This extension is dependent on the following extensions:
+
+- [[menatwork/contao-multicolumnwizard]](https://packagist.org/packages/menatwork/contao-multicolumnwizard),
+- [[cliffparnitzky/technical-value-regex]](https://packagist.org/packages/cliffparnitzky/technical-value-regex)
 
 
 Screenshots
