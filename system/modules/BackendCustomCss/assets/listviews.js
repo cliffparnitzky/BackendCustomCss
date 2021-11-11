@@ -1,5 +1,6 @@
 
-/* z_listviews.js */
+/* listviews.js */
+
 (function($) {
   window.addEvent('domready', function() {
 

@@ -1,5 +1,5 @@
 
-/* toggle_all_paletts.js */
+/* toggle_all_pallets.js */
 
 (function($) {
   window.addEvent('domready', function() {

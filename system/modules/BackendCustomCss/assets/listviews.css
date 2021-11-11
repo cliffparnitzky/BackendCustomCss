@@ -1,5 +1,5 @@
 
-/* z-listviews.css */
+/* listviews.css */
 
 /* Contao 4.9.12 Bug https://github.com/contao/contao/issues/2769 */
 .tl_listing .tl_left {
@@ -70,18 +70,3 @@
 }
 /* ... Page listview ... END
 -----------------------------------------------*/
-
-
-
-/* ... TinyMCE ...
------------------------------------------------*/
-textarea.mce-textbox {
-  font-family: Consolas, mono-space !important;
-  font-size: 1rem !important;
-  background-color: #444 !important;
-  color: #fff !important;
-}
-/* ... TinyMCE ... END
------------------------------------------------*/
-
-

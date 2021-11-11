@@ -1,5 +1,4 @@
 
-
 /* filter_auto.js */
 
 (function($) {

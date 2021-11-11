@@ -6,7 +6,6 @@
  * @license   LGPL
  * @copyright Andreas Burg info@andreasburg.de
  */
-#dump($GLOBALS['TL_CSS']);
 
 if(TL_MODE == 'BE')
 {
