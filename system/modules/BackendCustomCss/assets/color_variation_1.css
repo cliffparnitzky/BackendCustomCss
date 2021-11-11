@@ -1,0 +1,30 @@
+
+/* backend_color_1_ab.css */
+
+/* protect your eyes */
+body#top:not(.popup) {
+  background-color: #1C1B22;
+  color: #fff;
+}
+#container {
+  color: #444;
+}
+
+/* change this bad background-color: #F47C00 to #81A100 */
+#header .inner,
+#tl_crawl .progress-bar.running {
+  background-color: #81A100;
+}
+#tmenu sup {
+  color: #81A100;
+}
+#tl_navigation .menu_level_1 li.current {
+  border-left-color: #81A100;
+}
+#tmenu a:hover,
+#tmenu a.hover,
+#tmenu li:hover .h2,
+#tmenu .active .h2,
+#tmenu .burger button:hover {
+  background-color: #718D00;
+}

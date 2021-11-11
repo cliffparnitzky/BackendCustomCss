@@ -1,0 +1,11 @@
+
+/* backend_fieldsets_ab.css */
+
+/* highlight fieldsets */
+fieldset:is(.tl_box, .tl_tbox) > legend {
+  background-color: #EEF3D9;
+  width: 100%;
+}
+fieldset.collapsed > legend {
+  background-color: rgba(0, 0, 0, .05);
+}

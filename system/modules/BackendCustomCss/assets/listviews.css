@@ -1,0 +1,87 @@
+
+/* z-listviews.css */
+
+/* Contao 4.9.12 Bug https://github.com/contao/contao/issues/2769 */
+.tl_listing .tl_left {
+	line-height: 1.5;
+}
+
+/* ... Article listview ...
+-----------------------------------------------*/
+.article_title,
+.article_section,
+.article_id,
+.article_css {
+  padding-right: .5em;
+  cursor: help;
+}
+.article_title {
+  color: #b05701;
+  color: blueviolet;
+}
+.article_title:empty:before {
+  content: "no alias";
+  color: #CB7474;
+}
+.article_section {
+  color: #aaa;
+}
+.article_id {
+  color: #70A6CB;
+}
+.article_css {
+  color: #72CB73;
+}
+/* ... Article listview ... END
+-----------------------------------------------*/
+
+
+
+/* ... Page listview ...
+-----------------------------------------------*/
+.page_cssClass:empty,
+.page_layout {
+  display: none;
+}
+.page_layout.has_layout {
+  display: inline;
+}
+.page_alias,
+.page_cssClass,
+.page_layout {
+  cursor: help;
+  white-space: nowrap;
+  font-weight: normal;
+}
+.page_alias {
+  color: #aaa;
+}
+.page_alias:empty:before {
+  content: "no alias";
+  color: #CB7474;
+}
+.page_cssClass {
+  color: #72CB73;
+}
+.page_layout {
+	background-color: #aaa;
+	color: #fff;
+	padding: 2px 3px 1px;
+}
+/* ... Page listview ... END
+-----------------------------------------------*/
+
+
+
+/* ... TinyMCE ...
+-----------------------------------------------*/
+textarea.mce-textbox {
+  font-family: Consolas, mono-space !important;
+  font-size: 1rem !important;
+  background-color: #444 !important;
+  color: #fff !important;
+}
+/* ... TinyMCE ... END
+-----------------------------------------------*/
+
+

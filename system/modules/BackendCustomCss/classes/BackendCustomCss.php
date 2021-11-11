@@ -10,12 +10,12 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 3 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at <http://www.gnu.org/licenses/>.
@@ -56,12 +56,20 @@ class BackendCustomCss extends \Backend
     {
       if ($this->User->backendCustomCssTemplateStyles)
       {
+        $stylePath = 'system/modules/BackendCustomCss/assets/';
         foreach ($this->User->backendCustomCssTemplateStyles as $style)
         {
-          $GLOBALS['TL_CSS'][] = 'system/modules/BackendCustomCss/assets/' . $style . '.css';
+          if (is_file($stylePath . $style . '.css'))
+          {
+            $GLOBALS['TL_CSS'][] = $stylePath . $style . '.css';
+          }
+          if (is_file($stylePath . $style . '.js'))
+          {
+            $GLOBALS['TL_JAVASCRIPT'][] = $stylePath . $style . '.js';
+          }
         }
       }
-      
+
       if ($this->User->backendCustomCssSystemStyles)
       {
         $systemStyles = $this->getSystemStylesPaths();
@@ -74,7 +82,7 @@ class BackendCustomCss extends \Backend
           }
         }
       }
-      
+
       if ($this->User->backendCustomCssUserStyles)
       {
         foreach ($this->User->backendCustomCssUserStyles as $style)
@@ -87,7 +95,7 @@ class BackendCustomCss extends \Backend
         }
       }
     }
-    
+
     // add fixed system css
     $systemStyles = $this->getSystemStylesPaths(true);
     foreach ($systemStyles as $alias=>$path)
@@ -101,7 +109,7 @@ class BackendCustomCss extends \Backend
     // make sure the hook is only executed once
     unset($GLOBALS['TL_HOOKS']['loadLanguageFile']['BackendCustomCssHook']);
   }
-  
+
   /**
    * Return all system styles definied in system settings as array to create checkbox options
    * @param DataContainer
@@ -109,7 +117,7 @@ class BackendCustomCss extends \Backend
    */
   public function getSystemStylesOptions(\DataContainer $dc) {
     $styles = array();
-    
+
     if ($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles'])
     {
       $systemStyles = deserialize($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles']);
@@ -124,8 +132,8 @@ class BackendCustomCss extends \Backend
         }
       }
     }
-    
-    return $styles; 
+
+    return $styles;
   }
 
   /**
@@ -134,7 +142,7 @@ class BackendCustomCss extends \Backend
    */
   private function getSystemStylesPaths($blnOnlyFixed = false) {
     $styles = array();
-    
+
     if ($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles'])
     {
       $systemStyles = deserialize($GLOBALS['TL_CONFIG']['backendCustomCssSystemStyles']);
@@ -143,7 +151,7 @@ class BackendCustomCss extends \Backend
         foreach ($systemStyles as $k=>$v)
         {
           $useStyle = $v['active'] && static::matchesDomain($v['domain']);
-          
+
           if ($useStyle)
           {
             if ($blnOnlyFixed && $v['fix'])
@@ -158,7 +166,7 @@ class BackendCustomCss extends \Backend
             {
               $useStyle = false;
             }
-            
+
             if ($useStyle)
             {
               $styles[$v['alias']] = $v['cssFilePath'];
@@ -167,10 +175,10 @@ class BackendCustomCss extends \Backend
         }
       }
     }
-    
-    return $styles; 
+
+    return $styles;
   }
-  
+
   /**
    * Check if the given domain is contained in the environment HTTP host
    */
@@ -180,7 +188,7 @@ class BackendCustomCss extends \Backend
     {
       return true;
     }
-    
+
     return strpos(\Environment::get('httpHost'), $strDomain) !== FALSE;
   }
 }
