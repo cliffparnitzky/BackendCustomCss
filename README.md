@@ -44,7 +44,6 @@ Dependency
 This extension is dependent on the following extensions:
 
 - [[menatwork/contao-multicolumnwizard]](https://packagist.org/packages/menatwork/contao-multicolumnwizard),
-- [[cliffparnitzky/technical-value-regex]](https://packagist.org/packages/cliffparnitzky/technical-value-regex)
 
 
 Screenshots
