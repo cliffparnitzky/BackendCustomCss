@@ -1,0 +1,88 @@
+
+/* filter_arrange.css */
+
+@media (min-width: 1440px) {
+
+  /* positioning */
+
+  /* all panels */
+  .cbcss_filter {
+    padding-left: 10px;
+  }
+  .cbcss_filter::before,
+  .cbcss_filter::after {
+    order: 100;
+  }
+
+
+  /* 1. panel */
+  .cbcss_filter_1 .tl_subpanel {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: .5em;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cbcss_filter_1 .tl_subpanel > strong {
+    grid-column: 1 / -1;
+    text-align: left;
+    width: 100%;
+  }
+  .cbcss_filter_1 .tl_select {
+    max-width: 25%;
+    margin: 0;
+    width: auto;
+    height: auto;
+  }
+
+
+  /* 2. panel */
+  .cbcss_filter_2 {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: .5em;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  .cbcss_filter_2 .tl_subpanel {
+    width: auto;
+  }
+  .cbcss_filter_2 .tl_limit {
+    order: 9;
+  }
+  .cbcss_filter_2 .tl_subpanel > strong {
+    padding-right: .5em;
+  }
+  .cbcss_filter_2 :is(.tl_select, input.tl_text) {
+    margin: 0;
+    width: auto;
+    height: auto;
+  }
+  .cbcss_filter_2 input.tl_text {
+    padding-top: 4px;
+    padding-bottom: 5px;
+  }
+
+  /* Filter submit icons */
+  .cbcss_filter_2 .tl_submit_panel {
+    min-width: 30px;
+    letter-spacing: normal;
+    padding: 0;
+    order: 10;
+  }
+  .cbcss_filter_2 .tl_submit_panel button {
+    width: 30px;
+    aspect-ratio: 1;
+    height: auto;
+    top: 0;
+    text-indent: 40px;
+    background-size: 80%;
+    transition: all .1s ease 0s;
+    background-position: center;
+    background-position: right bottom;
+  }
+  .cbcss_filter_2 .tl_submit_panel button:hover {
+    background-size: 100%;
+  }
+}

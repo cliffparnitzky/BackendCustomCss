@@ -10,12 +10,12 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 3 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at <http://www.gnu.org/licenses/>.
@@ -40,10 +40,18 @@ $GLOBALS['TL_LANG']['tl_user']['backendCustomCssUserStylesActive'] = array('Akti
 /**
  * Template styles options
  */
-$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_full']            = array("Volle Breite", "Stellt das Backend in voller Bildschirmbreite, also 100%, dar.<br><i>von Cliff Parnitzky</i>");
-$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements_cp'] = array("Verbesserungen (CP)", "Stellt einige Verbesserungen der Backend CSS Definition zur Verfügung.<br><i>von Cliff Parnitzky</i>");
-$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_improvements_ng'] = array("Verbesserungen (NG)", "Stellt einige Verbesserungen der Backend CSS Definition zur Verfügung.<br><i>von Nina Gerling</i>");
-$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['backend_hide_paste_hint'] = array("Paste Hint verstecken", "Versteckt den Paste Hint (Hinweis mit Pfeil, wo ein neues Element einfügt werden kann)<br><i>von Cliff Parnitzky</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['color_variation_1'] = array("Farbvariation 1", "Ein paar wenige angenehmere Hauptfarben.<br><i>von Andreas Burg</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['filter_arrange'] = array("Filter formatieren", "Arrangiert die Filter mit CSS Grid und vergrößert die Icons. Nur ab Viewportbreite 1440px.<br><i>von Andreas Burg</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['filter_auto'] = array("Autofilter", "Filter reagieren sofort bei Auswahl: (Feldtyp für die Suche nur, wenn ein Wert im Suchfeld vorhanden ist).<br><i>von Andreas Burg</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['pallets'] = array("Paletten hervorheben", "Visualisiert geöffnete und geschlossene Paletten und macht sie über die gesamte Breite anklickbar.<br><i>von Andreas Burg</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['toggle_all_pallets'] = array("Paletten auf-/zuklappen", "Stellt Button zur Verfügung um alle Paletten gleichzeitig zu öffnen oder zu schließen.<br><i>von Andreas Burg</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['listviews'] = array("Listviews erweitern", "Zeigt einige nützliche Informationen in der Seitenstruktur und der Artikelübersicht. Zeigt das benutzte Layout, CSS-Klassen, vergebene ID, Alias und mehr bei Mouseover.<br><i>von Andreas Burg</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['hide_paste_hint'] = array("Paste Hint verstecken", "Versteckt den Paste Hint (Hinweis mit Pfeil, wo ein neues Element einfügt werden kann).<br><i>von Cliff Parnitzky</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['no_focus_on_autocomplete'] = array("Autofocus Patch", "Kein Autofocus für Felder mit <i>autocomplete</i>. Siehe Ticket <a href=\"https://github.com/contao/contao/issues/3651\" target=\"_blank\">#3651</a>.<br><i>von Andreas Burg</i>");
+$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes']['misc'] = array("Diverse Beta", "Diverses im Beta-Stadium.<br>
+- Eine Mindesthöhe für SVG-Grafiken setzen<br>
+- Horizontales Springen der Seite verhindern<br>
+<i>von Andreas Burg</i>");
 
 /**
  * Legends

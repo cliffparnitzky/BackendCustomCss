@@ -1,0 +1,12 @@
+
+/* toggle_all_pallets.css */
+
+.cbcss_close_all {
+  background-image: url(../../../themes/flexible/icons/folMinus.svg);
+}
+a.cbcss_inactive {
+  opacity: .4;
+  cursor: default;
+  filter: grayscale(100%);
+  color: inherit;
+}

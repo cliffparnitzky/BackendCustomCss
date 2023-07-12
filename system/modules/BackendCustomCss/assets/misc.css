@@ -1,0 +1,16 @@
+
+/* misc.css */
+
+/* no horizontal page jumping */
+html.top {
+  overflow-y: scroll;
+}
+html.top body {
+  overflow-y: visible;
+}
+
+/* min height for SVG graphics */
+img[src$="svg"] {
+  min-height: 18px;
+  width: auto;
+}

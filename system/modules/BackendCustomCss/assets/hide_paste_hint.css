@@ -1,0 +1,11 @@
+
+/* hide_paste_hint.css */
+
+#paste_hint,
+.sort_hint {
+  display: none;
+}
+/* what is the .sort_hint? */
+#paste_hint + .tl_listing_container {
+  margin-top: 20px;
+}

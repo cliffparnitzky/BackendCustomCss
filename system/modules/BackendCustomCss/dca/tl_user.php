@@ -10,12 +10,12 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 3 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at <http://www.gnu.org/licenses/>.
@@ -26,6 +26,18 @@
  * @package    BackendCustomCss
  * @license    LGPL
  */
+
+$backendCustomCssTemplateStyles = array(
+  'color_variation_1',
+  'filter_arrange',
+  'filter_auto',
+  'pallets',
+  'toggle_all_pallets',
+  'listviews', // additionally uses dca config for tl_page and tl_article
+  'hide_paste_hint',
+  'no_focus_on_autocomplete',
+  'misc'
+);
 
 /**
  * Extending paletts
@@ -71,16 +83,18 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssActive'] = array
 (
   'label'     => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssActive'],
   'inputType' => 'checkbox',
-  'eval'      => array('tl_class'=>'w50'),
+  'eval'      => array('submitOnChange' => true, 'tl_class'=>'w50'),
+  'default'   => true,
   'sql'       => "char(1) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssTemplateStyles'] = array
 (
   'label'     => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyles'],
   'inputType' => 'checkboxWizard',
-  'options'   => array('backend_full', 'backend_improvements_cp', 'backend_improvements_ng', 'backend_hide_paste_hint'),
+  'options'   => $backendCustomCssTemplateStyles,
   'reference' => &$GLOBALS['TL_LANG']['tl_user']['backendCustomCssTemplateStyleTypes'],
   'eval'      => array('tl_class'=>'clr w50', 'multiple'=>true, 'helpwizard'=>true),
+  'default'   => $backendCustomCssTemplateStyles,
   'sql'       => "blob NULL"
 );
 $GLOBALS['TL_DCA']['tl_user']['fields']['backendCustomCssSystemStyles'] = array
